@@ -1,11 +1,11 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Version=0.1.2
+Version=3.0.0
 Encoding=UTF-8
 Name=gResistor
 Comment=Resistor color code calculator
-Icon=/usr/share/gresistor/icon.png
-Exec=/usr/bin/gresistor
+Icon=/usr/local/share/gresistor/icon.png
+Exec=/usr/local/bin/gresistor.py
 Terminal=false
 Type=Application
 MimeType=application/x-glade;
@@ -13,3 +13,6 @@ Categories=Application;Utility;gResistor
 Name[ro]=gResistor
 Comment[ro]=Calculator pentru formule electrice
 Name[ro_RO]=gResistor
+Name[it]=gResistor
+Comment[it]=Colcolatore del valore delle resistenze
+Name[it_IT]=gResistor
