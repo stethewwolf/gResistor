@@ -1,14 +1,21 @@
 from distutils.core import setup
-# setup(name='gresistor',
-#       version='0.0.1',
-#       description      = 'Aici intra descrierea',
-#       author           = 'Pop Gheorghe',
-#       author_email     = 'pop.gheorghe@rdslink.ro',
-#       url              = 'http://www.minipop.org',
-#       license          = 'GPL',
-#       scripts=['gresistor'],
-#       py_modules =['SimpleGladeApp'],
-#       data_files = [('share/gresistor',['gresistor.glade']),('share/applications',
-#                        ['gresistor.desktop']),('share/gresistor',
-#                        ['pixmaps/icon.png'])],
-#       )
+from gresistor import app_name, app_version
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setup(
+    name=app_name,
+    version=app_version,
+    description      = 'Resistor color code calculator',
+    author           = 'Stefano Prina',
+    author_email     = 'stefano-prina@outlook.it',
+    url              = 'https:/stefano-prina.it/gresistor',
+    license          = 'GPL',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    scripts=['gresistor.py'],
+    data_files = [('share/gresistor',['gresistor.glade']),('share/applications',
+                       ['gresistor.desktop']),('share/gresistor',
+                       ['pixmaps/icon.png'])],
+      )
