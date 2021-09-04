@@ -9,7 +9,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 import cairo
 import math
-
+import os
 
 app_name = "gResistor"
 app_version = "3.0.0"
@@ -415,10 +415,18 @@ def main():
     global signal_handler
     global value
 
+    glade_file = os.path.join(
+            '/usr',
+            'local',
+            'share',
+            'gresistor',
+            'gresistor.glade'
+            )
+
     signal_handler = Handler()
     builder = Gtk.Builder()
 
-    builder.add_from_file("gresistor.glade")
+    builder.add_from_file(glade_file)
     builder.connect_signals(signal_handler)
 
     window = builder.get_object("gresistor_main_window")
