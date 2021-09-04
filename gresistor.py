@@ -10,6 +10,37 @@ from gi.repository import Gtk
 import cairo
 import math
 
+
+app_name = "gResistor"
+app_version = "3.0.0"
+
+black_code = (0,0,0)
+brown_code = (165/255,42/255,42/255)
+red_code = (1,0,0)
+orange_code = (1,69/255,0)
+yellow_code = (1,1,0)
+green_code = (0,1,0)
+blue_code = (0,0,1)
+violet_code = (238/255,130/255,238/255)
+gray_code = (128/255,128/255,128/255)
+white_code = (1,1,1)
+gold_code = (1,215/255,0)
+silver_code = (192/255,192/255,192/255)
+
+color_codes = dict()
+color_codes['Black'] = black_code
+color_codes['Brown'] = brown_code
+color_codes['Red'] = red_code
+color_codes['Orange'] = orange_code
+color_codes['Yellow'] = yellow_code
+color_codes['Green'] = green_code
+color_codes['Blue'] = blue_code
+color_codes['Violet'] = violet_code
+color_codes['Gray'] = gray_code
+color_codes['White'] = white_code
+color_codes['Gold'] = gold_code
+color_codes['Silver'] = silver_code
+
 class Handler:
     def onDestroy(self, *args):
         Gtk.main_quit()
@@ -22,6 +53,7 @@ class Handler:
         pass
 
     def onBandsChange(self, *args):
+        global builder
         text = args[0].get_active_text()
 
         if '4' in text:
@@ -30,6 +62,9 @@ class Handler:
             self.onSelect5bands()
         elif '6' in text:
             self.onSelect6bands()
+
+        drawing_area = builder.get_object("main_drawing_area")
+        drawing_area.queue_draw()
 
     def onSelect4bands(self, *args):
         global buizlder
@@ -86,7 +121,6 @@ class Handler:
         window = builder.get_object("gresistor_main_window")
         h, w =  window.get_size()
 
-        # example at https://zetcode.com/gfx/pycairo/text/
         cr.move_to(w/3, 50)
         cr.select_font_face("Sans")
         cr.set_font_size(22)
@@ -117,25 +151,92 @@ class Handler:
         cr.line_to(w/3+290, 107)
         cr.stroke()
 
-    #   Trasez dreptunghiuri de culoare
+
+        bands_chooser = builder.get_object("combo_num_bands")
+        band_color = bands_chooser.get_active_text()
+
+        # band 1 rectangle
+        band_1_chooser = builder.get_object('band_1_chooser')
+        band_1_color = band_1_chooser.get_active_text()
+        band_1_color_code = color_codes[band_1_color]
+
+        cr.set_source_rgb(
+                band_1_color_code[0],
+                band_1_color_code[1],
+                band_1_color_code[2])
         cr.rectangle(w/3+65, 71,10, 73)
+        cr.fill()
         cr.stroke()
+
+        # band 2 rectangle
+        band_2_chooser = builder.get_object('band_2_chooser')
+        band_2_color = band_2_chooser.get_active_text()
+        band_2_color_code = color_codes[band_2_color]
+
+        cr.set_source_rgb(
+                band_2_color_code[0],
+                band_2_color_code[1],
+                band_2_color_code[2])
         cr.rectangle(w/3+110, 83,10, 49)
+        cr.fill()
         cr.stroke()
+
+        # multiply rectangle
+        multiply_chooser = builder.get_object("multiply_chooser")
+        multiply_color = multiply_chooser.get_active_text()
+        multiply_color_code = color_codes[multiply_color]
 
         cr.rectangle(w/3+150, 83,10, 49)
+        cr.set_source_rgb(
+                multiply_color_code[0],
+                multiply_color_code[1],
+                multiply_color_code[2])
+
+        cr.fill()
         cr.stroke()
+
+        # tolerance rectangle
+        tolerance_chooser = builder.get_object("tolerance_chooser")
+        tolerance_color = tolerance_chooser.get_active_text()
+        tolerance_color_code = color_codes[tolerance_color]
+        cr.set_source_rgb(
+                tolerance_color_code[0],
+                tolerance_color_code[1],
+                tolerance_color_code[2])
         cr.rectangle(w/3+170, 83,10, 49)
+
+        cr.fill()
         cr.stroke()
 
-    #-- Gresistor.on_drawingarea1_expose_event }
-        #if (index==1):
-        #    self.drawingarea1.window.draw_rectangle(self.bg_gc3,True, w+130, 83,10, 49)
-        #if (index==2):
-        #    self.drawingarea1.window.draw_rectangle(self.bg_gc6,True, w+215, 71,10, 73)
-        #    self.drawingarea1.window.draw_rectangle(self.bg_gc3,True, w+130, 83,10, 49)
+        if '5' in band_color or '6' in band_color:
+            # band 3 rectangle
+            band_3_chooser = builder.get_object('band_3_chooser')
+            band_3_color = band_3_chooser.get_active_text()
+            band_3_color_code = color_codes[band_3_color]
 
-    #-- Gresistor.new {
+            cr.set_source_rgb(
+                    band_3_color_code[0],
+                    band_3_color_code[1],
+                    band_3_color_code[2])
+
+            cr.rectangle(w/3+130, 83,10, 49)
+            cr.fill()
+            cr.stroke()
+
+        if '6' in band_color:
+            # temperature rectangle
+            temperature_chooser = builder.get_object("temperature_chooser")
+            temperature_color = temperature_chooser.get_active_text()
+            temperature_color_code = color_codes[temperature_color]
+            cr.set_source_rgb(
+                    temperature_color_code[0],
+                    temperature_color_code[1],
+                    temperature_color_code[2])
+
+            cr.rectangle(w/3+215, 71,10, 73)
+            cr.fill()
+            cr.stroke()
+
 
 def calc_value():
     global value
@@ -322,7 +423,8 @@ def main():
 
     window = builder.get_object("gresistor_main_window")
     window.show_all()
-    window.resize(800,600)
+    window.resize(600,400)
+    window.set_title(app_name)
     window.connect("delete-event", Gtk.main_quit)
 
     # by default app start with only 4 band enabled
