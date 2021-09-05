@@ -36,3 +36,11 @@ To run the program just type 'gresistor.py' or click the icon in 'Applications>A
 ## Reference
 
 This is based on the application developed by 'Pop Gheorghe' <pop.gheorghe@rdslink.ro> and downloaded from [sourceforge](https://sourceforge.net/projects/gresistor/) 
+
+
+Resistor color codes are explained 
+ *  [Electronic color code](https://en.wikipedia.org/wiki/Electronic_color_code#Resistor_code)
+ * [arrow.com](https://www.arrow.com/en/research-and-events/articles/resistor-color-code)
+
+Many information, such description and desktop files came from the [old debian
+package](http://archive.ubuntu.com/ubuntu/pool/universe/g/gresistor/gresistor_0.0.1-0ubuntu3_all.deb)
