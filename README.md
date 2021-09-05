@@ -44,3 +44,5 @@ Resistor color codes are explained
 
 Many information, such description and desktop files came from the [old debian
 package](http://archive.ubuntu.com/ubuntu/pool/universe/g/gresistor/gresistor_0.0.1-0ubuntu3_all.deb)
+
+List of the colors code got from [here](https://www.rapidtables.com/web/color/RGB_Color.html)
