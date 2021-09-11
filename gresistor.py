@@ -410,18 +410,10 @@ def calc_value():
     return value
 
 
-def main():
+def main(glade_file):
     global builder
     global signal_handler
     global value
-
-    glade_file = os.path.join(
-            '/usr',
-            'local',
-            'share',
-            'gresistor',
-            'gresistor.glade'
-            )
 
     signal_handler = Handler()
     builder = Gtk.Builder()
@@ -445,4 +437,19 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys_glade_file = os.path.join(
+            '/usr',
+            'local',
+            'share',
+            'gresistor',
+            'gresistor.glade'
+            )
+
+    repo_glade_file = os.path.join(
+            'gresistor.glade'
+            )
+
+
+    if os.path.exists(repo_glade_file):
+        main(repo_glade_file)
+        main(sys_glade_file)
