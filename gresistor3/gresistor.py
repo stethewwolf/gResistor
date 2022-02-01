@@ -410,7 +410,7 @@ def calc_value():
     return value
 
 
-def main(glade_file):
+def run_gresistor(glade_file):
     global builder
     global signal_handler
     global value
@@ -436,7 +436,7 @@ def main(glade_file):
         signal_handler.onKeyboardInterrupt()
 
 
-if __name__ == "__main__":
+def main():
     sys_glade_file = os.path.join(
             '/usr',
             'local',
@@ -451,5 +451,9 @@ if __name__ == "__main__":
 
 
     if os.path.exists(repo_glade_file):
-        main(repo_glade_file)
-        main(sys_glade_file)
+        run_gresistor(repo_glade_file)
+    else:
+        run_gresistor(sys_glade_file)
+
+if __name__ == "__main__":
+    main()
