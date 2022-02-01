@@ -12,7 +12,7 @@ import math
 import os
 
 app_name = "gResistor"
-app_version = "3.0.0"
+app_version = "3.0.3"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
@@ -449,9 +449,17 @@ def main():
             'gresistor.glade'
             )
 
+    env_glade_file = os.path.join(
+        os.environ["VIRTUAL_ENV"],
+            'share',
+            'gresistor',
+            'gresistor.glade'
+        )
 
     if os.path.exists(repo_glade_file):
         run_gresistor(repo_glade_file)
+    elif os.path.exists(env_glade_file):
+        run_gresistor(env_glade_file)
     else:
         run_gresistor(sys_glade_file)
 
