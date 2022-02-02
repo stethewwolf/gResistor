@@ -12,7 +12,7 @@ import math
 import os
 
 app_name = "gResistor"
-app_version = "3.0.3"
+app_version = "3.1.0"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
@@ -42,6 +42,11 @@ color_codes['Gold'] = gold_code
 color_codes['Silver'] = silver_code
 
 class Handler:
+    def showAbout(self, *args):
+        global builder
+        about_window = builder.get_object("gresistor_about")
+        about_window.run()
+
     def onDestroy(self, *args):
         Gtk.main_quit()
 
@@ -446,15 +451,18 @@ def main():
             )
 
     repo_glade_file = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)),
             'gresistor.glade'
             )
 
-    env_glade_file = os.path.join(
-        os.environ["VIRTUAL_ENV"],
-            'share',
-            'gresistor',
-            'gresistor.glade'
-        )
+    env_glade_file = "/null"
+    if("VIRTUAL_ENV" in os.environ):
+        env_glade_file = os.path.join(
+            os.environ["VIRTUAL_ENV"],
+                'share',
+                'gresistor',
+                'gresistor.glade'
+            )
 
     if os.path.exists(repo_glade_file):
         run_gresistor(repo_glade_file)
