@@ -12,7 +12,7 @@ import math
 import os
 
 app_name = "gResistor"
-app_version = "3.1.1"
+app_version = "3.1.2"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
@@ -465,9 +465,9 @@ def main():
             )
 
     local_glade_file = "/null"
-    if("USER" in os.environ):
+    if("HOME" in os.environ):
         env_glade_file = os.path.join(
-            os.environ["USER"],
+            os.environ["HOME"],
                 '.local',
                 'share',
                 'gresistor',
@@ -478,6 +478,8 @@ def main():
         run_gresistor(repo_glade_file)
     elif os.path.exists(env_glade_file):
         run_gresistor(env_glade_file)
+    elif os.path.exists(local_glade_file):
+        run_gresistor(local_glade_file)
     else:
         run_gresistor(sys_glade_file)
 
