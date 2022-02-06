@@ -24,8 +24,8 @@ setup(
     packages=['gresistor3'],
     entry_points={'console_scripts': ['gresistor3=gresistor3.gresistor:main']},
     data_files = [('share/gresistor',['gresistor3/gresistor.glade']),('share/applications',
-                       ['gresistor.desktop']),('share/gresistor',
-                       ['gresistor3/pixmaps/icon.png'])]
+                       ['gresistor.desktop']),('share/icons',
+                       ['gresistor3/pixmaps/gresistor.png'])]
 
     )
 
