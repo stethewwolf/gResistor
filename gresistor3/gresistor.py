@@ -12,7 +12,7 @@ import math
 import os
 
 app_name = "gResistor"
-app_version = "3.1.0"
+app_version = "3.1.1"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
@@ -459,6 +459,16 @@ def main():
     if("VIRTUAL_ENV" in os.environ):
         env_glade_file = os.path.join(
             os.environ["VIRTUAL_ENV"],
+                'share',
+                'gresistor',
+                'gresistor.glade'
+            )
+
+    local_glade_file = "/null"
+    if("USER" in os.environ):
+        env_glade_file = os.path.join(
+            os.environ["USER"],
+                '.local',
                 'share',
                 'gresistor',
                 'gresistor.glade'
