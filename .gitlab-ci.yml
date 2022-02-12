@@ -16,6 +16,7 @@ before_script:
 run:
   only:
     - tags
+    - manual
   except:
     - branches
   script:
