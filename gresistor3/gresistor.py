@@ -12,7 +12,7 @@ import math
 import os
 
 app_name = "gResistor"
-app_version = "3.1.3"
+app_version = "3.1.4"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
