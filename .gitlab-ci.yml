@@ -24,7 +24,7 @@ run:
     - python3 setup.py bdist_wheel
     - ls dist/*
     - twine check dist/*.whl
-    - twine upload --verbose -p $TWINE_PASSWORD -u $TWINE_USERNAME dist/*.whl
+    - twine upload --verbose dist/*.whl
     - rm -rf ~/.pypirc
   
   artifacts:
