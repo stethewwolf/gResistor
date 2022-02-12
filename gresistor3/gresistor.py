@@ -8,7 +8,6 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 import cairo
-import math
 import os
 
 app_name = "gResistor"
