@@ -29,6 +29,11 @@ Based on the work of Gheorghe Pop &lt;pop.gheorghe@rdslink.ro&gt;</property>
       </object>
     </child>
   </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="stock">gtk-dialog-question</property>
+  </object>
   <object class="GtkWindow" id="gresistor_main_window">
     <property name="can-focus">False</property>
     <property name="icon">icon.png</property>
@@ -83,6 +88,17 @@ Based on the work of Gheorghe Pop &lt;pop.gheorghe@rdslink.ro&gt;</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
                         <signal name="activate" handler="showAbout" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem">
+                        <property name="label">Wikipedia</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="use-underline">True</property>
+                        <property name="image">image1</property>
+                        <property name="use-stock">False</property>
+                        <signal name="activate" handler="onWiki" swapped="no"/>
                       </object>
                     </child>
                   </object>

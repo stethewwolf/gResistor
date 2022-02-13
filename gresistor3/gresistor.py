@@ -8,10 +8,11 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 import cairo
-import os
+import os, sys
 
 app_name = "gResistor"
 app_version = "3.1.4"
+wikipedia_eletronic_color_scheme = "https://en.wikipedia.org/wiki/Electronic_color_code"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
@@ -49,6 +50,18 @@ class Handler:
         about_window.set_version(app_version)
         about_window.run()
 
+    def onWiki(self, *args):
+        global wikipedia_eletronic_color_scheme
+
+        if sys.platform.startswith('linux'):
+            os.system("xdg-open " + wikipedia_eletronic_color_scheme)
+        elif sys.platform.startswith('win'):
+            os.system("start " + wikipedia_eletronic_color_scheme)
+        elif sys.platform.startswith('darwin'):
+            os.system("open " + wikipedia_eletronic_color_scheme)
+        else:
+            pass
+            # todo manage this case
 
     def onDestroy(self, *args):
         Gtk.main_quit()
