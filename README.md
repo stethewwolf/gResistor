@@ -1,4 +1,4 @@
-# GResistor
+# gResistor3
 
 To allow for identification, resistors are usually marked
 with colored bands. Often refered to as color codes, these
@@ -9,40 +9,50 @@ do is watch the colors on the resistor and then enter them
 in the program. As you enter colours you'll see that the
 resistor value is changing accordingly.
 
-![Screenshot 1](images/screenshot_1.png)
-
-![Screenshot 2](images/screenshot_2.png)
 
 ## Installation
 
-gResistor uses Python distutils for installation.
+### Pypi
 
-To install gResistor you'll need to have root privileges to make this install.
-
+You can install gResistor using the command :
 ```
-python setup.py install
-
-# or 
-
-sudo python setup.py install
+$ pip install gResistor
 ```
 
-In a terminal.
+### Source Code
+If you want, you can clone the git repo and run directly the setup.py script on your machine:
+
+```
+$ git clone https://gitlab.com/a2488/gresistor.git
+
+$ cd gresistor
+
+$ python setup.py install
+
+```
 
 ## Run the program
 
-To run the program just type 'gresistor.py' or click the icon in 'Applications>Accesories>gResistor'
+To run the program just:
+  * type `gresistor3`
+  * click the icon in 'Applications>Accesories>gResistor'
 
-## Reference
+## Report an Issue
 
-This is based on the application developed by 'Pop Gheorghe' <pop.gheorghe@rdslink.ro> and downloaded from [sourceforge](https://sourceforge.net/projects/gresistor/) 
+Pleas if you find an error or if you want to propose something new, please visit this [page](https://gitlab.com/a2488/gresistor/-/issues)
 
+
+## References
+
+This is based on the application developed by 'Pop Gheorghe' <pop.gheorghe@rdslink.ro> and downloaded from [sourceforge](https://sourceforge.net/projects/gresistor/)
 
 Resistor color codes are explained 
- *  [Electronic color code](https://en.wikipedia.org/wiki/Electronic_color_code#Resistor_code)
+ * [Electronic color code](https://en.wikipedia.org/wiki/Electronic_color_code#Resistor_code)
  * [arrow.com](https://www.arrow.com/en/research-and-events/articles/resistor-color-code)
 
 Many information, such description and desktop files came from the [old debian
 package](http://archive.ubuntu.com/ubuntu/pool/universe/g/gresistor/gresistor_0.0.1-0ubuntu3_all.deb)
 
 List of the colors code got from [here](https://www.rapidtables.com/web/color/RGB_Color.html)
+
+This project is hosted on [GitLab](https://gitlab.com/a2488/gresistor/-/tree/main)
