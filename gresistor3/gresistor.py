@@ -13,6 +13,7 @@ import os, sys
 app_name = "gResistor"
 app_version = "3.1.4"
 wikipedia_eletronic_color_scheme = "https://en.wikipedia.org/wiki/Electronic_color_code"
+gresistor_issues = "https://gitlab.com/a2488/gresistor/-/issues"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
@@ -62,6 +63,20 @@ class Handler:
         else:
             pass
             # todo manage this case
+
+    def onIssue(self, *args):
+        global gresistor_issues
+
+        if sys.platform.startswith('linux'):
+            os.system("xdg-open " + gresistor_issues)
+        elif sys.platform.startswith('win'):
+            os.system("start " + gresistor_issues)
+        elif sys.platform.startswith('darwin'):
+            os.system("open " + gresistor_issues)
+        else:
+            pass
+            # todo manage this case
+
 
     def onDestroy(self, *args):
         Gtk.main_quit()
