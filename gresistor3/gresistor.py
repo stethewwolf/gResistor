@@ -43,8 +43,12 @@ color_codes['Silver'] = silver_code
 class Handler:
     def showAbout(self, *args):
         global builder
+        global app_version
+        global app_name
         about_window = builder.get_object("gresistor_about")
+        about_window.set_version(app_version)
         about_window.run()
+
 
     def onDestroy(self, *args):
         Gtk.main_quit()
