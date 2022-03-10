@@ -16,17 +16,17 @@ setup(
     description      = 'Resistor color code calculator',
     author           = 'Stefano Prina',
     author_email     = 'stethewwolf@gmail.com',
-    url              = 'https://stefano-prina.it/gresistor',
+    url              = 'https://gresistor.stethewwolf.eu',
     license          = 'GPL',
     long_description=long_description,
     long_description_content_type="text/markdown",
     python_requires=">=3.8",
     packages=['gresistor3'],
     entry_points={'console_scripts': ['gresistor3=gresistor3.gresistor:main']},
-    data_files = [('share/gresistor',['gresistor3/gresistor.glade']),('share/applications',
-                       ['gresistor.desktop']),('share/icons',
-                       ['gresistor3/pixmaps/gresistor.png'])]
-
+    data_files = [
+    	('share/gresistor',['gresistor3/gresistor.glade','gresistor3/pixmaps/gresistor.png']),
+    	('share/applications', ['gresistor.desktop']),
+    	('share/icons', ['gresistor3/pixmaps/gresistor.png'])]
     )
 
 

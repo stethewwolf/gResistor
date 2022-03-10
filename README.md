@@ -23,7 +23,7 @@ $ pip install gResistor
 If you want, you can clone the git repo and run directly the setup.py script on your machine:
 
 ```
-$ git clone https://gitlab.com/a2488/gresistor.git
+$ git clone https://github.com/stethewwolf/gResistor.git
 
 $ cd gresistor
 
@@ -39,7 +39,7 @@ To run the program just:
 
 ## Report an Issue
 
-Pleas if you find an error or if you want to propose something new, please visit this [page](https://gitlab.com/a2488/gresistor/-/issues)
+Pleas if you find an error or if you want to propose something new, please visit this [page](https://github.com/stethewwolf/gResistor/issues)
 
 
 ## References
@@ -55,4 +55,4 @@ package](http://archive.ubuntu.com/ubuntu/pool/universe/g/gresistor/gresistor_0.
 
 List of the colors code got from [here](https://www.rapidtables.com/web/color/RGB_Color.html)
 
-This project is hosted on [GitLab](https://gitlab.com/a2488/gresistor/-/tree/main)
+This project is hosted on [GitHub](https://github.com/stethewwolf/gResistor)
