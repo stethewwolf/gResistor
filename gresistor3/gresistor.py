@@ -9,6 +9,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 import cairo
 import os, sys
+from pathlib import Path
 
 app_name = "gResistor"
 app_version = "3.2.2"
@@ -474,8 +475,7 @@ def run_gresistor(glade_file):
 
 def main():
     sys_glade_file = os.path.join(
-            '/usr',
-            'local',
+            Path(__file__).parents[1],
             'share',
             'gresistor',
             'gresistor.glade'

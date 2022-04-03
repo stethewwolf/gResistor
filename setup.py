@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from gresistor3.gresistor import app_name, app_version
 from setuptools import find_packages, setup
 import sys, os
@@ -24,9 +25,10 @@ setup(
     packages=['gresistor3'],
     entry_points={'console_scripts': ['gresistor3=gresistor3.gresistor:main']},
     data_files = [
-    	('share/gresistor',['gresistor3/gresistor.glade','gresistor3/pixmaps/gresistor.png']),
+    	('share/gresistor',['gresistor3/gresistor.glade','gresistor3/pixmaps/48/gresistor.png']),
     	('share/applications', ['gresistor.desktop']),
-    	('share/icons', ['gresistor3/pixmaps/gresistor.png'])]
+    	('share/icons/', ['gresistor3/pixmaps/128/gresistor.png']),
+    	]
     )
 
 
