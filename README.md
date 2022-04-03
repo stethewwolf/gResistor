@@ -9,17 +9,20 @@ do is watch the colors on the resistor and then enter them
 in the program. As you enter colours you'll see that the
 resistor value is changing accordingly.
 
-
 ## Installation
 
 ### Pypi
 
 You can install gResistor using the command :
+
 ```
 $ pip install gResistor
 ```
 
+[pypi page](https://pypi.org/project/gResistor/)
+
 ### Source Code
+
 If you want, you can clone the git repo and run directly the setup.py script on your machine:
 
 ```
@@ -56,3 +59,5 @@ package](http://archive.ubuntu.com/ubuntu/pool/universe/g/gresistor/gresistor_0.
 List of the colors code got from [here](https://www.rapidtables.com/web/color/RGB_Color.html)
 
 This project is hosted on [GitHub](https://github.com/stethewwolf/gResistor)
+
+[Project home page](https://gresistor.stethewwolf.eu/)
