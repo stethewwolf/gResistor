@@ -12,7 +12,7 @@ import os, sys
 from pathlib import Path
 
 app_name = "gResistor"
-app_version = "3.2.2"
+app_version = "3.2.3"
 wikipedia_eletronic_color_scheme = "https://en.wikipedia.org/wiki/Electronic_color_code"
 gresistor_issues = "https://gitlab.com/a2488/gresistor/-/issues"
 
