@@ -18,16 +18,17 @@ setup(
     author           = 'Stefano Prina',
     author_email     = 'stethewwolf@gmail.com',
     url              = 'https://gresistor.stethewwolf.eu',
-    license          = 'GPL',
+    license          = 'LGPL',
     long_description=long_description,
     long_description_content_type="text/markdown",
     python_requires=">=3.8",
     packages=['gresistor3'],
     entry_points={'console_scripts': ['gresistor3=gresistor3.gresistor:main']},
     data_files = [
-    	('share/gresistor',['gresistor3/gresistor.glade','gresistor3/pixmaps/48/gresistor.png']),
-    	('share/applications', ['gresistor.desktop']),
-    	('share/icons/', ['gresistor3/pixmaps/128/gresistor.png']),
+    	('share/gresistor',['gresistor3/gresistor.glade','gresistor3/pixmaps/48x48/eu.stethewwolf.gresistor.png']),
+    	('share/applications', ['eu.stethewwolf.gresistor.desktop']),
+    	('share/icons/', ['gresistor3/pixmaps/128x128/eu.stethewwolf.gresistor.png']),
+        ('share/metainfo/', ['eu.stethewwolf.gresistor.metainfo.xml']),
     	]
     )
 

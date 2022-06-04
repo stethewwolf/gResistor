@@ -1,0 +1,38 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>eu.stethewwolf.gresistor</id>
+    <launchable type="desktop-id">eu.stethewwolf.gresistor.desktop</launchable>
+    <name>gResistor</name>
+    <summary>Resistor color codes calculator</summary>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LGPL-3.0-or-later  </project_license>
+    <description>
+        <p>
+            To allow for identification, resistors are usually marked
+            with colored bands. Often refered to as color codes, these
+            markings are indicative of their resistance, tolerance and
+            temperature coefficient. gResistor helps you translate
+            resistor color codes into a readable value. All you have to
+            do is watch the colors on the resistor and then enter them
+            in the program. As you enter colours you'll see that the
+            resistor value is changing accordingly.
+        </p>
+    </description>
+
+    <url type="homepage">https://gresistor.stethewwolf.eu/</url>
+    <url type="help">https://gresistor.stethewwolf.eu/</url>
+    <url type="bugtracker">https://github.com/stethewwolf/gResistor/issues</url>
+    <developer_name>Stefano Prina</developer_name>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://www.openchemistry.org/wp-content/uploads/2014/05/avogadro2-first-renders-i2x4-gro.png</image>
+        </screenshot>
+
+    </screenshots>
+    <content_rating type="oars-1.1"/>
+    <releases>
+        <release version="3.2.4" date="2022-06-4"/></release>  
+        <release version="3.2.3" date="2022-06-2"/></release>    
+    </releases>
+</component>
