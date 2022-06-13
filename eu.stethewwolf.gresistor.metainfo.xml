@@ -32,7 +32,6 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
-        <release version="3.2.4" date="2022-06-4"/></release>  
-        <release version="3.2.3" date="2022-06-2"/></release>    
+        <release version="3.2.4" date="2022-06-4"/>
     </releases>
 </component>
