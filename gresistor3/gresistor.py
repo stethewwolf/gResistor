@@ -14,7 +14,8 @@ from pathlib import Path
 app_name = "gResistor"
 app_version = "3.2.4"
 wikipedia_eletronic_color_scheme = "https://en.wikipedia.org/wiki/Electronic_color_code"
-gresistor_issues = "https://gitlab.com/a2488/gresistor/-/issues"
+gresistor_issues = "https://github.com/stethewwolf/gResistor/issues"
+gresistor_wesite = "https://gresistor.stethewwolf.eu/"
 
 black_code = (0,0,0)
 brown_code = (165/255,42/255,42/255)
@@ -48,9 +49,19 @@ class Handler:
         global builder
         global app_version
         global app_name
-        about_window = builder.get_object("gresistor_about")
-        about_window.set_version(app_version)
-        about_window.run()
+        global gresistor_wesite
+
+        about_dialog = Gtk.AboutDialog()
+        about_dialog.set_version(app_version)
+        about_dialog.set_website(gresistor_wesite)
+        about_dialog.set_website_label("gResistor homepage")
+        about_dialog.set_program_name(app_name)
+        about_dialog.set_authors(["Stefano Prina <stethewwolf@gmail.com>","Gheorghe Pop <pop.gheorghe@rdslink.ro>"])
+        about_dialog.set_comments("Resistor color codes calculator")
+        about_dialog.set_logo_icon_name("eu.stethewwolf.gresistor")
+
+        response = about_dialog.run()
+        about_dialog.destroy()
 
     def onWiki(self, *args):
         global wikipedia_eletronic_color_scheme
@@ -77,7 +88,6 @@ class Handler:
         else:
             pass
             # todo manage this case
-
 
     def onDestroy(self, *args):
         Gtk.main_quit()
@@ -274,7 +284,6 @@ class Handler:
             cr.fill()
             cr.stroke()
 
-
 def calc_value():
     global value
     global builder
@@ -446,7 +455,6 @@ def calc_value():
 
     return value
 
-
 def run_gresistor(glade_file):
     global builder
     global signal_handler
@@ -472,14 +480,19 @@ def run_gresistor(glade_file):
     except KeyboardInterrupt:
         signal_handler.onKeyboardInterrupt()
 
-
 def main():
-    sys_glade_file = os.path.join(
-            Path(__file__).parents[1],
-            'share',
-            'gresistor',
-            'gresistor.glade'
-            )
+    gresistor_folder = None
+
+    if len(Path(__file__).parents) > 0:
+        gresistor_folder = Path(__file__).parents[0]
+
+    if gresistor_folder is not None:
+        sys_glade_file = os.path.join(
+                gresistor_folder,
+                'share',
+                'gresistor',
+                'gresistor.glade'
+                )
 
     repo_glade_file = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
