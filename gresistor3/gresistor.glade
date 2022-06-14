@@ -9,7 +9,7 @@
     <property name="copyright" translatable="yes">Stefano Prina &lt;stethewwolf@gmail.com&gt;
 
 Based on the work of Gheorghe Pop &lt;pop.gheorghe@rdslink.ro&gt;</property>
-    <property name="website">https://stefano-prina.it/gresistor/</property>
+    <property name="website">https://gresistor.stethewwolf.eu/</property>
     <property name="website-label" translatable="yes">gresistor</property>
     <property name="logo-icon-name">help-about</property>
     <property name="license-type">gpl-3-0</property>
@@ -41,7 +41,7 @@ Based on the work of Gheorghe Pop &lt;pop.gheorghe@rdslink.ro&gt;</property>
   </object>
   <object class="GtkWindow" id="gresistor_main_window">
     <property name="can-focus">False</property>
-    <property name="icon">icon.png</property>
+    <property name="icon">eu.stethewwolf.gresistor.png</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
