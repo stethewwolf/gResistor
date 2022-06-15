@@ -518,12 +518,18 @@ def main():
                 'gresistor.glade'
             )
 
+    flatpack_glade_file = os.path.join(
+            "/app/share/gresistor/gresistor.glade"
+        )
+        
     if os.path.exists(repo_glade_file):
         run_gresistor(repo_glade_file)
     elif os.path.exists(env_glade_file):
         run_gresistor(env_glade_file)
     elif os.path.exists(local_glade_file):
         run_gresistor(local_glade_file)
+    elif os.path.exists(flatpack_glade_file):
+        run_gresistor(flatpack_glade_file)
     else:
         run_gresistor(sys_glade_file)
 
