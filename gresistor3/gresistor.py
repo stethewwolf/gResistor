@@ -12,7 +12,7 @@ import os, sys
 from pathlib import Path
 
 app_name = "gResistor"
-app_version = "3.2.4"
+app_version = "3.2.5"
 wikipedia_eletronic_color_scheme = "https://en.wikipedia.org/wiki/Electronic_color_code"
 gresistor_issues = "https://github.com/stethewwolf/gResistor/issues"
 gresistor_wesite = "https://gresistor.stethewwolf.eu/"
@@ -521,7 +521,7 @@ def main():
     flatpack_glade_file = os.path.join(
             "/app/share/gresistor/gresistor.glade"
         )
-        
+
     if os.path.exists(repo_glade_file):
         run_gresistor(repo_glade_file)
     elif os.path.exists(env_glade_file):
