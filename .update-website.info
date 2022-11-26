@@ -1,0 +1,3 @@
+REMOTE_USER=webtest
+REMOTE_HOST=localhost
+REMOTE_DEST=html
