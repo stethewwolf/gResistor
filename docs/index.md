@@ -69,7 +69,8 @@ Pleas if you find an error or if you want to propose something new, please visit
 
 This is based on the application developed by 'Pop Gheorghe' <pop.gheorghe@rdslink.ro> and downloaded from [sourceforge](https://sourceforge.net/projects/gresistor/)
 
-Resistor color codes are explained 
+Resistor color codes are explained:
+
  * [Electronic color code](https://en.wikipedia.org/wiki/Electronic_color_code#Resistor_code)
  * [arrow.com](https://www.arrow.com/en/research-and-events/articles/resistor-color-code)
 
