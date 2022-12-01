@@ -1,1 +1,5 @@
 site_name: gResistor
+repo_url: https://github.com/stethewwolf/gResistor
+site_author: stethewwolf@posteo.net
+site_description: gResistor home page
+theme: windmill
