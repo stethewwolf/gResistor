@@ -1,7 +1,3 @@
----
-layout: home
----
-
 To allow for identification, resistors are usually marked
 with colored bands. Often refered to as color codes, these
 markings are indicative of their resistance, tolerance and
