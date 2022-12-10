@@ -53,8 +53,9 @@ $ python setup.py install
 ## Run the program
 
 To run the program just:
-  * type `gresistor3`
-  * click the icon in 'Applications>Accesories>gResistor'
+
+  * open a console and type `gresistor3`
+  * click the icon in 'Applications>Development>gResistor'
 
 ## Report an Issue
 
