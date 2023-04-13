@@ -1,4 +1,4 @@
-REMOTE_USER=webtest
-REMOTE_HOST=localhost
+REMOTE_USER=gresistor
+REMOTE_HOST=192.168.2.5
 REMOTE_DEST=html
 GITHUB_REPO="git@github.com:stethewwolf/gResistor.git"
